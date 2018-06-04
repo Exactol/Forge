@@ -1,4 +1,4 @@
 # Forge
 A OpenGL BSP Viewer
 
-Currently broken, but I plan on continuing development
+Currently broken and does not render, fixes should come out shortly
