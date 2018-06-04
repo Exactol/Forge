@@ -1,0 +1,329 @@
+﻿{
+  "GuiStyle": {
+    "StyleName": "Default Style Name",
+    "StyleDescription": "Default Description",
+    "TargetVersion": 1.0,
+    "StyleVersion": 1.0,
+
+    "SyleVar": {
+      "WindowPadding": {
+        "X": float,
+        "Y": float
+      },
+      "FramePadding": {
+        "X": float,
+        "Y": float
+      },
+      "WindowMinSize": {
+        "X": float,
+        "Y": float
+      },
+      "Alpha": float,
+      "AntiAliasedLines": boolean,
+      "AntiAliasedShapes": boolean,
+      "ChildWindowRounding": float,
+      "ColumnsMinSpacing": float,
+      "CurveTessallationTolerance": float,
+      "DisplaySafeAreaPadding": {
+        "X": float,
+        "Y": float
+      },
+      "DisplayWindowPadding": {
+        "X": float,
+        "Y": float
+      },
+      "FrameRounding": float,
+      "GrabMinSize": float,
+      "GrabRounding": float,
+      "IndentSpacing": float,
+      "ItemInnerSpacing": {
+        "X": float,
+        "Y": float
+      },
+      "ItemSpacing": {
+        "X": float,
+        "Y": float
+      },
+      "ScrollbarRounding": float,
+      "ScrollbarSize": float,
+      "TouchExtraPadding": {
+        "X": float,
+        "Y": float
+      },
+      "WindowRounding": float,
+      "WindowTitleAlign": 1
+      = left,
+      2 =
+      center,
+      4 =
+      right,
+      8 =
+      top,
+      9 =
+      default,
+      16 =
+      vcenter
+    }
+
+    "ColorVar": {
+      "Border": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "BorderShadow": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "Button": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ButtonActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ButtonHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "CheckMark": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ChildWindowBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "CloseButton": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "CloseButtonActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "CloseButtonHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "Column": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ColumnActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ColumnHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ComboBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "FrameBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "FrameBgActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "FrameBgHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "Header": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "HeaderActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "HeaderHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "MenuBarBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ModalWindowDarkening": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "PlotHistogram": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "PlotHistogramHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "PlotLines": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "PlotLinesHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ResizeGrip": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ResizeGripActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ResizeGripHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ScrollbarBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ScrollbarGrab": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ScrollbarGrabActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ScrollbarGrabHovered": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "SliderGrab": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "SliderGrabActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "Text": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "TextDisabled": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "TextSelectedBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "TitleBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "TitleBgActive": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "TitleBgCollapsed": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "ToolTipBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      },
+      "WindowBg": {
+        "X": red,
+        "Y": green,
+        "Z": blue,
+        "W": alpha
+      }
+    } 
+  } 
+}
