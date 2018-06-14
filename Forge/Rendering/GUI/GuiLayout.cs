@@ -28,8 +28,9 @@ namespace Forge
             ImGui.NewFrame();
 
             //Make a new GUI window with the same size as the OpenGL window
-            ImGui.SetNextWindowSize(new Vector2(Width, Height), SetCondition.FirstUseEver);
-            ImGui.SetNextWindowPosCenter(SetCondition.Always);
+            //ImGui.SetNextWindowSize(new Vector2(Width, Height), SetCondition.FirstUseEver);
+            //ImGui.SetNextWindowPosCenter(SetCondition.Always);
+			
 
             ImGui.PushStyleColor(ColorTarget.WindowBg, new Vector4(0, 0, 0, 0));
             ImGui.BeginWindow("Main Window", ref WindowOpen, WindowFlags.NoResize | WindowFlags.NoTitleBar | WindowFlags.NoMove);
@@ -69,8 +70,8 @@ namespace Forge
         private void SubmitSecondaryMenuBar()
         {
             //Set position under main menu bar
-            ImGui.SetNextWindowPos(new Vector2(0, _secondaryMenuBarOffset), SetCondition.Always);
-            ImGui.SetNextWindowSize(new Vector2(Width, 40), SetCondition.Always);
+            //ImGui.SetNextWindowPos(new Vector2(0, _secondaryMenuBarOffset), SetCondition.Always);
+            //ImGui.SetNextWindowSize(new Vector2(Width, 40), SetCondition.Always);
 
             ImGui.PushStyleVar(StyleVar.WindowPadding, new Vector2(5f, 5f));
             ImGui.PushStyleVar(StyleVar.WindowRounding, 0);

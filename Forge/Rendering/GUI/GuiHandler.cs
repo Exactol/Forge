@@ -289,7 +289,6 @@ namespace Forge
             
         private unsafe void RenderImDrawData(DrawData* drawData)
         {
-
             IO io = ImGui.GetIO();
 
             int fbWidth = (int)(io.DisplaySize.X * io.DisplayFramebufferScale.X);
@@ -327,7 +326,7 @@ namespace Forge
 
                 GL.Enable(EnableCap.Blend);
                 GL.BlendEquation(BlendEquationMode.FuncAdd);
-                GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+                //GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
                 GL.Disable(EnableCap.CullFace);
                 GL.Disable(EnableCap.DepthTest);
                 GL.Enable(EnableCap.ScissorTest);
@@ -361,27 +360,27 @@ namespace Forge
 
                     for (int cmd_i = 0; cmd_i < cmdList->CmdBuffer.Size; cmd_i++ )
                     {
-                        DrawCmd* pcmd = &((DrawCmd*)cmdList->CmdBuffer.Data)[cmd_i];
+                        //DrawCmd* pcmd = &((DrawCmd*)cmdList->CmdBuffer.Data)[cmd_i];
 
-                        if (pcmd->UserCallback != IntPtr.Zero)
-                        {
-                            Console.WriteLine("User callback not implemented");
-                            throw new NotImplementedException();
-                        }
-                        else
-                        {
-                            //GL.BindTexture(TextureTarget.Texture2D, (int)pcmd->TextureId);
-                            GL.BindTexture(TextureTarget.Texture2D, pcmd->TextureId.ToInt32());
-                            GL.Scissor(
-                                (int)pcmd->ClipRect.X,
-                                (int)(fbHeight - pcmd->ClipRect.W),
-                                (int)(pcmd->ClipRect.Z - pcmd->ClipRect.X),
-                                (int)(pcmd->ClipRect.W - pcmd->ClipRect.Y));
+                        //if (pcmd->UserCallback != IntPtr.Zero)
+                        //{
+                        //    Console.WriteLine("User callback not implemented");
+                        //    throw new NotImplementedException();
+                        //}
+                        //else
+                        //{
+                        //    //GL.BindTexture(TextureTarget.Texture2D, (int)pcmd->TextureId);
+                        //    GL.BindTexture(TextureTarget.Texture2D, pcmd->TextureId.ToInt32());
+                        //    GL.Scissor(
+                        //        (int)pcmd->ClipRect.X,
+                        //        (int)(fbHeight - pcmd->ClipRect.W),
+                        //        (int)(pcmd->ClipRect.Z - pcmd->ClipRect.X),
+                        //        (int)(pcmd->ClipRect.W - pcmd->ClipRect.Y));
 
-                            GL.DrawElements(PrimitiveType.Triangles, (int)pcmd->ElemCount, DrawElementsType.UnsignedShort, new IntPtr(idxBuffer));
-                        }
+                        //    GL.DrawElements(PrimitiveType.Triangles, (int)pcmd->ElemCount, DrawElementsType.UnsignedShort, new IntPtr(idxBuffer));
+                        //}
 
-                        idxBuffer += pcmd->ElemCount;
+                        //idxBuffer += pcmd->ElemCount;
                     }
                 }
                 //Restore old OpenGL state

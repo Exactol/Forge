@@ -42,7 +42,7 @@ namespace Forge.Rendering.GUI
         public float ScrollbarSize;
         public Vector2 TouchExtraPadding;
         public float WindowRounding;
-        public Align WindowTitleAlign;
+        //public Align WindowTitleAlign;
 
         //Colors
         public Vector4 Border;
@@ -98,7 +98,7 @@ namespace Forge.Rendering.GUI
             WindowMinSize = style.WindowMinSize;
             Alpha = style.Alpha;
             AntiAliasedLines = style.AntiAliasedLines;
-            AntiAliasedShapes = style.AntiAliasedShapes;
+            //AntiAliasedShapes = style.AntiAliasedShapes;
             ChildWindowRounding = style.ChildWindowRounding;
             ColumnsMinSpacing = style.ColumnsMinSpacing;
             CurveTessellationTolerance = style.CurveTessellationTolerance;
@@ -114,7 +114,7 @@ namespace Forge.Rendering.GUI
             ScrollbarSize = style.ScrollbarSize;
             TouchExtraPadding = style.TouchExtraPadding;
             WindowRounding = style.WindowRounding;
-            WindowTitleAlign = style.WindowTitleAlign;
+            //WindowTitleAlign = style.WindowTitleAlign;
 
             Border = style.GetColor(ColorTarget.Border);
             BorderShadow = style.GetColor(ColorTarget.BorderShadow);
@@ -122,14 +122,14 @@ namespace Forge.Rendering.GUI
             ButtonActive = style.GetColor(ColorTarget.ButtonActive);
             ButtonHovered = style.GetColor(ColorTarget.ButtonHovered);
             CheckMark = style.GetColor(ColorTarget.CheckMark);
-            ChildWindowBg = style.GetColor(ColorTarget.ChildWindowBg);
+            //ChildWindowBg = style.GetColor(ColorTarget.ChildWindowBg);
             CloseButton = style.GetColor(ColorTarget.CloseButton);
             CloseButtonActive = style.GetColor(ColorTarget.CloseButtonActive);
             CloseButtonHovered = style.GetColor(ColorTarget.CloseButtonHovered);
-            Column = style.GetColor(ColorTarget.Column);
-            ColumnActive = style.GetColor(ColorTarget.ColumnActive);
-            ColumnHovered = style.GetColor(ColorTarget.ColumnHovered);
-            ComboBg = style.GetColor(ColorTarget.ComboBg);
+            //Column = style.GetColor(ColorTarget.Column);
+            //ColumnActive = style.GetColor(ColorTarget.ColumnActive);
+            //ColumnHovered = style.GetColor(ColorTarget.ColumnHovered);
+            //ComboBg = style.GetColor(ColorTarget.ComboBg);
             FrameBg = style.GetColor(ColorTarget.FrameBg);
             FrameBgActive = style.GetColor(ColorTarget.FrameBgActive);
             FrameBgHovered = style.GetColor(ColorTarget.FrameBgHovered);
@@ -236,27 +236,27 @@ namespace Forge.Rendering.GUI
             {
                 int align = (int) styleVar["WindowTitleAlign"];
                 
-                switch (align)
-                {
-                    case 1:
-                        WindowTitleAlign = Align.Left;
-                        break;
-                    case 2:
-                        WindowTitleAlign = Align.Center;
-                        break;
-                    case 4:
-                        WindowTitleAlign = Align.Right;
-                        break;
-                    case 8:
-                        WindowTitleAlign = Align.Top;
-                        break;
-                    case 9:
-                        WindowTitleAlign = Align.Default;
-                        break;
-                    case 16:
-                        WindowTitleAlign = Align.VCenter;
-                        break;
-                }
+                //switch (align)
+                //{
+                //    case 1:
+                //        WindowTitleAlign = Align.Left;
+                //        break;
+                //    case 2:
+                //        WindowTitleAlign = Align.Center;
+                //        break;
+                //    case 4:
+                //        WindowTitleAlign = Align.Right;
+                //        break;
+                //    case 8:
+                //        WindowTitleAlign = Align.Top;
+                //        break;
+                //    case 9:
+                //        WindowTitleAlign = Align.Default;
+                //        break;
+                //    case 16:
+                //        WindowTitleAlign = Align.VCenter;
+                //        break;
+                //}
             }
 
             //Set color properties
@@ -572,7 +572,7 @@ namespace Forge.Rendering.GUI
             style.WindowMinSize = WindowMinSize;
             style.Alpha = Alpha;
             style.AntiAliasedLines = AntiAliasedLines;
-            style.AntiAliasedShapes = AntiAliasedShapes;
+            //style.AntiAliasedShapes = AntiAliasedShapes;
             style.ChildWindowRounding = ChildWindowRounding;
             style.ColumnsMinSpacing = ColumnsMinSpacing;
             style.CurveTessellationTolerance = CurveTessellationTolerance;
@@ -588,7 +588,7 @@ namespace Forge.Rendering.GUI
             style.ScrollbarSize = ScrollbarSize;
             style.TouchExtraPadding = TouchExtraPadding;
             style.WindowRounding = WindowRounding;
-            style.WindowTitleAlign = WindowTitleAlign;
+            //style.WindowTitleAlign = WindowTitleAlign;
 
             style.SetColor(ColorTarget.Border, Border );
             style.SetColor(ColorTarget.BorderShadow, BorderShadow);
@@ -596,14 +596,14 @@ namespace Forge.Rendering.GUI
             style.SetColor(ColorTarget.ButtonActive, ButtonActive);
             style.SetColor(ColorTarget.ButtonHovered, ButtonHovered);
             style.SetColor(ColorTarget.CheckMark, CheckMark);
-            style.SetColor(ColorTarget.ChildWindowBg, ChildWindowBg);
+            //style.SetColor(ColorTarget.ChildWindowBg, ChildWindowBg);
             style.SetColor(ColorTarget.CloseButton, CloseButton);
             style.SetColor(ColorTarget.CloseButtonActive, CloseButtonActive);
             style.SetColor(ColorTarget.CloseButtonHovered, CloseButtonHovered);
-            style.SetColor(ColorTarget.Column, Column);
-            style.SetColor(ColorTarget.ColumnActive, ColumnActive);
-            style.SetColor(ColorTarget.ColumnHovered, ColumnHovered);
-            style.SetColor(ColorTarget.ComboBg, ComboBg);
+            //style.SetColor(ColorTarget.Column, Column);
+            //style.SetColor(ColorTarget.ColumnActive, ColumnActive);
+            //style.SetColor(ColorTarget.ColumnHovered, ColumnHovered);
+            //style.SetColor(ColorTarget.ComboBg, ComboBg);
             style.SetColor(ColorTarget.FrameBg, FrameBg);
             style.SetColor(ColorTarget.FrameBgActive, FrameBgActive);
             style.SetColor(ColorTarget.FrameBgHovered, FrameBgHovered);

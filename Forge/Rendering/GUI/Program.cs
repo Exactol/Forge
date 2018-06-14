@@ -247,12 +247,12 @@ namespace Forge.remove
                 style.WindowRounding = 0f;
                 style.ChildWindowRounding = 0f;
                 style.AntiAliasedLines = true;
-                style.AntiAliasedShapes = true;
+                //style.AntiAliasedShapes = true;
                 
                 style.SetColor(ColorTarget.Text, new System.Numerics.Vector4(0.00f, 0.00f, 0.00f, 1.00f));
                 style.SetColor(ColorTarget.TextDisabled, new System.Numerics.Vector4(0.60f, 0.60f, 0.60f, 1.00f));
                 style.SetColor(ColorTarget.WindowBg, new System.Numerics.Vector4(0.94f, 0.94f, 0.94f, 0.94f));
-                style.SetColor(ColorTarget.ChildWindowBg, new System.Numerics.Vector4(0.00f, 0.00f, 0.00f, 0.00f));
+                //style.SetColor(ColorTarget.ChildWindowBg, new System.Numerics.Vector4(0.00f, 0.00f, 0.00f, 0.00f));
                 style.SetColor(ColorTarget.Border, new System.Numerics.Vector4(0.00f, 0.00f, 0.00f, 0.39f));
                 style.SetColor(ColorTarget.BorderShadow, new System.Numerics.Vector4(1.00f, 1.00f, 1.00f, 0.10f));
                 style.SetColor(ColorTarget.FrameBg, new System.Numerics.Vector4(1.00f, 1.00f, 1.00f, 0.94f));
@@ -266,7 +266,7 @@ namespace Forge.remove
                 style.SetColor(ColorTarget.ScrollbarGrab, new System.Numerics.Vector4(0.69f, 0.69f, 0.69f, 1.00f));
                 style.SetColor(ColorTarget.ScrollbarGrabHovered, new System.Numerics.Vector4(0.59f, 0.59f, 0.59f, 1.00f));
                 style.SetColor(ColorTarget.ScrollbarGrabActive, new System.Numerics.Vector4(0.49f, 0.49f, 0.49f, 1.00f));
-                style.SetColor(ColorTarget.ComboBg, new System.Numerics.Vector4(0.86f, 0.86f, 0.86f, 0.99f));
+                //style.SetColor(ColorTarget.ComboBg, new System.Numerics.Vector4(0.86f, 0.86f, 0.86f, 0.99f));
                 style.SetColor(ColorTarget.CheckMark, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 1.00f));
                 style.SetColor(ColorTarget.SliderGrab, new System.Numerics.Vector4(0.24f, 0.52f, 0.88f, 1.00f));
                 style.SetColor(ColorTarget.SliderGrabActive, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 1.00f));
@@ -276,9 +276,9 @@ namespace Forge.remove
                 style.SetColor(ColorTarget.Header, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.31f));
                 style.SetColor(ColorTarget.HeaderHovered, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.80f));
                 style.SetColor(ColorTarget.HeaderActive, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 1.00f));
-                style.SetColor(ColorTarget.Column, new System.Numerics.Vector4(0.39f, 0.39f, 0.39f, 1.00f));
-                style.SetColor(ColorTarget.ColumnHovered, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.78f));
-                style.SetColor(ColorTarget.ColumnActive, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 1.00f));
+                //style.SetColor(ColorTarget.Column, new System.Numerics.Vector4(0.39f, 0.39f, 0.39f, 1.00f));
+                //style.SetColor(ColorTarget.ColumnHovered, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.78f));
+                //style.SetColor(ColorTarget.ColumnActive, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 1.00f));
                 style.SetColor(ColorTarget.ResizeGrip, new System.Numerics.Vector4(1.00f, 1.00f, 1.00f, 0.50f));
                 style.SetColor(ColorTarget.ResizeGripHovered, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.67f));
                 style.SetColor(ColorTarget.ResizeGripActive, new System.Numerics.Vector4(0.26f, 0.59f, 0.98f, 0.95f));
@@ -428,9 +428,9 @@ namespace Forge.remove
 
             private unsafe void SubmitGui()
             {
-                ImGui.SetNextWindowSize(new System.Numerics.Vector2(Width, Height), SetCondition.FirstUseEver);
+                //ImGui.SetNextWindowSize(new System.Numerics.Vector2(Width, Height), SetCondition.FirstUseEver);
 
-                ImGui.SetNextWindowPosCenter(SetCondition.Always);
+                //ImGui.SetNextWindowPosCenter(SetCondition.Always);
 
                 ImGui.BeginWindow("Test", ref _windowOpen, WindowFlags.NoResize | WindowFlags.NoTitleBar | WindowFlags.NoMove);
 
@@ -516,8 +516,8 @@ namespace Forge.remove
 
                 ImGui.EndMainMenuBar();
 
-                ImGui.SetNextWindowPos(new Vector2(0, 20), SetCondition.Always);
-                ImGui.SetNextWindowSize(new Vector2(Width, 30), SetCondition.Always);
+                //ImGui.SetNextWindowPos(new Vector2(0, 20), SetCondition.Always);
+                //ImGui.SetNextWindowSize(new Vector2(Width, 30), SetCondition.Always);
 
                 ImGui.PushStyleVar(StyleVar.WindowPadding, new Vector2(5f, 5f));
 
@@ -610,7 +610,7 @@ namespace Forge.remove
 
                     GL.Enable(EnableCap.Blend);
                     GL.BlendEquation(BlendEquationMode.FuncAdd);
-                    GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+                    //GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
                     GL.Disable(EnableCap.CullFace);
                     GL.Disable(EnableCap.DepthTest);
                     GL.Enable(EnableCap.ScissorTest);
@@ -703,10 +703,10 @@ namespace Forge.remove
                 int lengths;
                 StringBuilder msgLog = new StringBuilder();
 
-                while (GL.GetDebugMessageLog(1, maxMessageLength, out sources, out types, out ids, out severity,  out lengths, msgLog) != 0)
-                {
+                //while (GL.GetDebugMessageLog(1, maxMessageLength, out sources, out types, out ids, out severity,  out lengths, msgLog) != 0)
+                //{
                     
-                }
+                //}
                 return ("");
             }
 
