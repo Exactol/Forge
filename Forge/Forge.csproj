@@ -127,6 +127,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Rendering\Shaders\lineFragmentShader.frag" />
     <None Include="Rendering\Shaders\normalFragmentShader.frag" />
     <None Include="Rendering\Shaders\normalVertexShader.vert" />
     <None Include="Rendering\Shaders\normalGeometryShader.geom" />

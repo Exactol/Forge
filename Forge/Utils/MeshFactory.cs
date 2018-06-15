@@ -166,7 +166,7 @@ namespace Forge
 		}
 
 		//Convert 2 vec3 edges to vertex
-		public static Vertex[] EdgeToVertexes(List<Edge> edgeList)
+		public static Vertex[] EdgeToVertices(List<Edge> edgeList)
 		{
 			List<Vertex> vertList = new List<Vertex>();
 
@@ -180,6 +180,22 @@ namespace Forge
 			//Console.WriteLine("--Edge conversion complete--\n");
 
 			return (vertList.ToArray());
+		}
+
+		public static Vertex[] EdgeToVertices(Edge edge)
+		{
+			List<Vertex> vertList = new List<Vertex>();
+			vertList.Add(new Vertex(edge.vert1, Color4.CornflowerBlue));
+			vertList.Add(new Vertex(edge.vert2, Color4.CornflowerBlue));
+			return vertList.ToArray();
+		}
+
+		public static Vertex[] EdgeToVertices(Edge edge, Vector3 normal)
+		{
+			List<Vertex> vertList = new List<Vertex>();
+			vertList.Add(new Vertex(edge.vert1, Color4.CornflowerBlue, normal));
+			vertList.Add(new Vertex(edge.vert2, Color4.CornflowerBlue, normal));
+			return vertList.ToArray();
 		}
 
 		//Convert vector3 to vertex
@@ -208,11 +224,20 @@ namespace Forge
 
 			return (objList.ToArray());
 		}
-		
-		//TODO remove, temp method for testing
+
 		public static RenderObject FaceLumptoVertex(FaceLump face)
 		{
-			return new RenderObject((EdgeToVertexes(face.edgesContained)));
+			List<Vertex> vertices = new List<Vertex>();
+
+			for (int i = 0; i < face.edgesContained.Count; i++)
+			{
+				if (i == 0)
+					vertices.AddRange(EdgeToVertices(face.edgesContained[i], face.plane.normal));
+				else
+					vertices.Add(EdgeToVertices(face.edgesContained[i], face.plane.normal)[1]);
+			}
+
+			return new RenderObject(vertices.ToArray());
 		}
 
 		public static Vertex[] PlaneLumpToVertices(PlaneLump plane)

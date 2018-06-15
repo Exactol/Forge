@@ -15,8 +15,8 @@ namespace Forge
 
 		public float horizontalFov = 45.0f;
 		public float AspectRatio;
-		private float nearClip = 0.1f;
-		private float farClip = 60000000000f;
+		private float nearClip = 200f;
+		private float farClip = 100000f;
 
 		public float originalSpeed = 50f;
 		public float speed = 50f;

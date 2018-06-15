@@ -206,21 +206,37 @@ namespace Forge
 	//Vertex structure TODO add normals?
 	public struct Vertex
 	{
-		public const int size = (4 + 4) * 4; //Size of struct in bytes
+		public const int size = (4 + 4 + 4) * 4; //Size of struct in bytes
 
 		private readonly Vector4 position;
 		private readonly Color4 color;
+		private readonly Vector4 normal;
 
 		public Vertex(Vector4 pos, Color4 col)
 		{
 			position = pos;
 			color = col;
+			normal = Vector4.Zero;
 		}
 
+		public Vertex(Vector4 pos, Color4 col, Vector3 norm)
+		{
+			position = pos;
+			color = col;
+			normal = new Vector4(norm.X, norm.Y, norm.Z, 1.0f);
+		}
+
+		public Vertex(Vector3 pos, Color4 col, Vector3 norm)
+		{
+			position = new Vector4(pos.X, pos.Y, pos.Z, 1.0f);
+			color = col;
+			normal = new Vector4(norm.X, norm.Y, norm.Z, 1.0f);
+		}
 		public Vertex(Vector3 pos, Color4 col)
 		{
 			position = new Vector4(pos.X, pos.Y, pos.Z, 1.0f); //Convert vec3 to vec4
 			color = col;
+			normal = Vector4.Zero;
 		}
 	}
 

@@ -40,7 +40,7 @@ namespace Forge
 			:base(1280, 720, GraphicsMode.Default, 
 				 "Forge", GameWindowFlags.Default, DisplayDevice.Default, 
 				 //OpenGL major version: 4, minor version: 0
-				 4, 3, GraphicsContextFlags.ForwardCompatible)
+				 4, 3, GraphicsContextFlags.Debug)
 		{
 			//Print out system info
 			Console.WriteLine("-----System Info-----\n");
@@ -60,6 +60,7 @@ namespace Forge
 		//Gets directory of exe and then moves up 2 folders
 		private readonly string _baseDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase).TrimEnd(Path.DirectorySeparatorChar)).TrimEnd(Path.DirectorySeparatorChar)).TrimEnd(Path.DirectorySeparatorChar).Replace("file:\\", "");
 		private readonly List<string> _defaultShader = new List<string>();
+		private readonly List<string> _lineShader = new List<string>();
 		private readonly List<string> _shadedShader = new List<string>();
 		
 		private List<RenderObject> renderObjects = new List<RenderObject>();
@@ -70,8 +71,10 @@ namespace Forge
 
 		private bool _useShaded = false; //TODO turn into enum 
 
-		private string currentMap = "cube.bsp";
-				//@"C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\tf\maps\pl_thundermountain.bsp";
+		private string currentMap = //"cube.bsp";
+				@"C:\Program Files (x86)\Steam\steamapps\common\Team Fortress 2\tf\maps\pl_thundermountain.bsp";
+
+		private int _lineShaderProgram;
 
 		protected override void OnLoad(EventArgs e)
 		{
@@ -85,13 +88,15 @@ namespace Forge
 			
 			_defaultShader.Add(_baseDirectory + "\\Rendering\\Shaders\\defaultVertexShader.vert");
 			_defaultShader.Add(_baseDirectory + "\\Rendering\\Shaders\\defaultFragmentShader.frag");
+			_lineShader.Add(_baseDirectory + "\\Rendering\\Shaders\\lineFragmentShader.frag");
+			_lineShader.Add(_baseDirectory + "\\Rendering\\Shaders\\defaultVertexShader.vert");
 
 			//_shadedShader.Add(_baseDirectory + "/Rendering/Shaders/shadedVertexShader.vert");
 			//_shadedShader.Add(_baseDirectory + "/Rendering/Shaders/shadedFragmentShader.frag");
 
-			_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalVertexShader.vert");
-			_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalFragmentShader.frag");
-			_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalGeometryShader.geom");
+			//_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalVertexShader.vert");
+			//_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalFragmentShader.frag");
+			//_shadedShader.Add(_baseDirectory + "\\Rendering\\Shaders\\normalGeometryShader.geom");
 
 			List<FaceLump> temp = new List<FaceLump>();
 			temp = BSP.faceList;
@@ -110,24 +115,26 @@ namespace Forge
 			//renderObjects.Add(new RenderObject(MeshFactory.PlaneLumpToVertices(BSP.planeList[0])));
 			//renderObjects.Add(new RenderObject(MeshFactory.FaceLumptoVertex(temp)));
 			//renderObjects.Add(new RenderObject(MeshFactory.CreatePlane(32, Color4.Blue)));
-			//renderObjects.AddRange(MeshFactory.FaceLumptoVertex(temp));
-			renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[0]));
-			renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[1]));
-			renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[2]));
+			renderObjects.AddRange(MeshFactory.FaceLumptoVertex(temp));
+			//renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[0]));
+			//renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[1]));
+			//renderObjects.Add(MeshFactory.FaceLumptoVertex(temp[2]));
 			//renderObjects.Add(new RenderObject(MeshFactory.Vector3toVertex(vertexList)));
-			//renderObjects.Add(new RenderObject(MeshFactory.EdgeToVertexes(edgeList)));
+			//renderObjects.Add(new RenderObject(MeshFactory.EdgeToVertices(edgeList)));
 			//renderObjects.Add(new RenderObject(MeshFactory.CreateSolidCube(64f, Color4.DarkSlateBlue)));
 
 			grid = new RenderObject(MeshFactory.CreateGrid(16));
 
 			Shader.CreateShaderProgram(ref _defaultShaderProgram, _defaultShader);
+			Shader.CreateShaderProgram(ref _lineShaderProgram, _lineShader);
 			//Shader.CreateShaderProgram(ref _shadedShaderProgram, _shadedShader);
 
 			//Setup OpenGL settings
-			//GL.Enable(EnableCap.DepthTest);
-			//GL.DepthFunc(DepthFunction.Less);
-			//GL.Enable(EnableCap.CullFace);
-			//GL.Enable(EnableCap.Multisample);
+			GL.Enable(EnableCap.DepthTest);
+			GL.DepthFunc(DepthFunction.Less);
+			GL.Enable(EnableCap.CullFace);
+			GL.Enable(EnableCap.Multisample);
+			
 
 			//Hide cursor
 			CursorVisible = true;
@@ -234,11 +241,16 @@ namespace Forge
 			foreach (RenderObject renderObject in renderObjects)
 			{
 				renderObject.Bind();
-				//renderObject.Render(PrimitiveType.Triangles);
-				renderObject.Render(PrimitiveType.Lines);
-				renderObject.Render(PrimitiveType.Points);
-				renderObject.Render(PrimitiveType.TriangleStrip);
+				renderObject.Render(PrimitiveType.TriangleFan);
 			}
+
+			////Depth color pass
+			//foreach (RenderObject renderObject in renderObjects)
+			//{
+			//	GL.UseProgram(_lineShaderProgram);
+			//	renderObject.Bind();
+			//	renderObject.Render(PrimitiveType.LineStrip);
+			//}
 
 			//Render ImGUI gui
 			//RenderGui();

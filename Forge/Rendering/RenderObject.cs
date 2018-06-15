@@ -197,6 +197,19 @@ namespace Forge
 				16                              //Relative offset after vec4
 				);
 
+			//Normal Attributes
+			GL.VertexArrayAttribBinding(VAO, 2, 0);
+			GL.EnableVertexArrayAttrib(VAO, 2);
+
+			GL.VertexArrayAttribFormat(
+				VAO,                            //Target array
+				2,                              //Attribute index, from shader location = 1
+				4,                              //Size of attribute, vec4
+				VertexAttribType.Float,         //Type of attribute is float
+				false,                          //Does not need to be normalized
+				32                              //Relative offset after vec4
+				);
+
 			//Link this all together
 			GL.VertexArrayVertexBuffer(VAO, 0, VBO, IntPtr.Zero, Vertex.size);
 
