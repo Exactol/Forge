@@ -1,4 +1,2 @@
 # Forge
-A OpenGL BSP Viewer
-
-Currently broken and does not render, fixes should come out shortly
+A OpenGL BSP Viewer written in C# and OpenTK
